@@ -6,7 +6,7 @@
   "private": false,
   "scripts": {
     "start": "node index.js"
-    "bulid": "echo \"no bulid\""
+    "build": "echo \"no bulid\""
   },
   "dependencies": {
     "axios": "latest",
