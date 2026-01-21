@@ -2,203 +2,25 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人介绍</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* 渐变色定义 */
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            overflow: hidden;
-        }
-
-        /* 背景动画帧 */
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* 毛玻璃卡片容器 */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.2); /* 白色半透明 */
-            backdrop-filter: blur(15px); /* 背景模糊 */
-            -webkit-backdrop-filter: blur(15px); /* 兼容 Safari */
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.3); /* 边框高光 */
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            padding: 50px 40px;
-            text-align: center;
-            width: 350px;
-            max-width: 90%;
-            color: #fff;
-            transform: translateY(0);
-            transition: transform 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* 头像样式 */
-        .avatar-container {
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid rgba(255, 255, 255, 0.6);
-            object-fit: cover;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: transform 0.5s ease;
-        }
-
-        .avatar:hover {
-            transform: rotate(360deg) scale(1.05);
-        }
-
-        /* 文本样式 */
-        h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        p.bio {
-            font-size: 14px;
-            opacity: 0.9;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        /* 联系方式按钮容器 */
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        /* 按钮样式 */
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 20px;
-            background: rgba(255, 255, 255, 0.25);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            font-size: 15px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .btn i {
-            margin-right: 10px;
-            font-size: 18px;
-        }
-
-        .btn:hover {
-            background: rgba(255, 255, 255, 0.5);
-            color: #333;
-            transform: scale(1.02);
-        }
-
-        /* 提示框样式 */
-        .toast {
-            visibility: hidden;
-            min-width: 250px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            text-align: center;
-            border-radius: 50px;
-            padding: 16px;
-            position: fixed;
-            z-index: 1;
-            bottom: 30px;
-            font-size: 14px;
-            opacity: 0;
-            transition: opacity 0.5s, bottom 0.5s;
-        }
-
-        .toast.show {
-            visibility: visible;
-            opacity: 1;
-            bottom: 50px;
-        }
-    </style>
+    <title>导航页</title>
 </head>
-<body>
+<!-- 使用简单的 Flex 布局把内容居中 -->
+<body style="margin: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px;">
 
-    <div class="glass-card">
-        <div class="avatar-container">
-            <!-- 直接调用 QQ 头像 API -->
-            <img src="https://q1.qlogo.cn/g?b=qq&nk=1195119293&s=640" alt="Avatar" class="avatar">
-        </div>
-        
-        <h1>我的主页</h1>
-        <p class="bio">你好，很高兴认识你！<br>热爱生活，喜欢探索新事物。</p>
+    <!-- 百度按钮 -->
+    <a href="https://www.baidu.com" target="_blank">
+        <button style="padding: 10px 30px; font-size: 16px; cursor: pointer;">百度 (Baidu)</button>
+    </a>
 
-        <div class="contact-links">
-            <!-- QQ 按钮 (点击复制) -->
-            <div class="btn" onclick="copyQQ()">
-                <i class="fab fa-qq"></i> QQ: 1195119293
-            </div>
-            
-            <!-- 邮件链接 (示例，可自行修改) -->
-            <a href="mailto:1195119293@qq.com" class="btn">
-                <i class="fas fa-envelope"></i> 发送邮件
-            </a>
+    <!-- 谷歌按钮 -->
+    <a href="https://www.google.com" target="_blank">
+        <button style="padding: 10px 30px; font-size: 16px; cursor: pointer;">谷歌 (Google)</button>
+    </a>
 
-            <!-- 更多链接示例 -->
-            <a href="#" class="btn">
-                <i class="fas fa-globe"></i> 访问博客
-            </a>
-        </div>
-    </div>
+    <!-- 油管按钮 -->
+    <a href="https://www.youtube.com" target="_blank">
+        <button style="padding: 10px 30px; font-size: 16px; cursor: pointer;">YouTube</button>
+    </a>
 
-    <!-- 复制成功的提示框 -->
-    <div id="toast" class="toast">QQ号已复制到剪贴板！</div>
-
-    <script>
-        function copyQQ() {
-            const qqNumber = "1195119293";
-            navigator.clipboard.writeText(qqNumber).then(function() {
-                showToast("QQ号 " + qqNumber + " 已复制！");
-            }, function(err) {
-                const textArea = document.createElement("textarea");
-                textArea.value = qqNumber;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand("Copy");
-                textArea.remove();
-                showToast("QQ号 " + qqNumber + " 已复制！");
-            });
-        }
-        function showToast(message) {
-            const toast = document.getElementById("toast");
-            toast.innerText = message;
-            toast.className = "toast show";
-            setTimeout(function(){ 
-                toast.className = toast.className.replace("show", ""); 
-            }, 3000);
-        }
-    </script>
 </body>
 </html>
