@@ -4,17 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人介绍</title>
-    <!-- 引入图标库 FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 全局重置 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        /* 动态渐变背景 */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             height: 100vh;
@@ -183,12 +179,9 @@
     <script>
         function copyQQ() {
             const qqNumber = "1195119293";
-            
-            // 使用现代剪贴板 API
             navigator.clipboard.writeText(qqNumber).then(function() {
                 showToast("QQ号 " + qqNumber + " 已复制！");
             }, function(err) {
-                // 如果失败（兼容性问题），尝试手动选择复制
                 const textArea = document.createElement("textarea");
                 textArea.value = qqNumber;
                 document.body.appendChild(textArea);
@@ -198,7 +191,6 @@
                 showToast("QQ号 " + qqNumber + " 已复制！");
             });
         }
-
         function showToast(message) {
             const toast = document.getElementById("toast");
             toast.innerText = message;
@@ -208,6 +200,5 @@
             }, 3000);
         }
     </script>
-
 </body>
 </html>
